@@ -4,17 +4,17 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "ButtonBoxGUI"
-screenGui.ResetOnSpawn = false -- Keeps the GUI persistent
+screenGui.ResetOnSpawn = false
 screenGui.Parent = playerGui
 
 
 local mainFrame = Instance.new("Frame")
 mainFrame.Name = "MainFrame"
-mainFrame.Size = UDim2.new(0, 250, 0, 220) -- Slightly taller for title adjustments
-mainFrame.Position = UDim2.new(0.5, -125, 0.5, -110) -- Centered
-mainFrame.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+mainFrame.Size = UDim2.new(0, 250, 0, 220)
+mainFrame.Position = UDim2.new(0.5, -125, 0.5, -110)
+mainFrame.BackgroundColor3 = Color3.new(0, 0, 0)
 mainFrame.BorderSizePixel = 2
-mainFrame.BorderColor3 = Color3.fromRGB(138, 43, 226) -- Neon purple outline
+mainFrame.BorderColor3 = Color3.fromRGB(138, 43, 226)
 mainFrame.Active = true
 mainFrame.Parent = screenGui
 
@@ -54,47 +54,47 @@ end)
 
 local titleBackground = Instance.new("Frame")
 titleBackground.Name = "TitleBackground"
-titleBackground.Size = UDim2.new(1, 0, 0, 40) -- Taller title background
-titleBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+titleBackground.Size = UDim2.new(1, 0, 0, 40)
+titleBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0) 
 titleBackground.BorderSizePixel = 2
-titleBackground.BorderColor3 = Color3.fromRGB(138, 43, 226) -- Neon purple outline
+titleBackground.BorderColor3 = Color3.fromRGB(138, 43, 226) 
 titleBackground.Parent = mainFrame
 
 local title = Instance.new("TextLabel")
 title.Name = "Title"
-title.Size = UDim2.new(1, -4, 1, -4) -- Slightly smaller for padding
+title.Size = UDim2.new(1, -4, 1, -4) 
 title.Position = UDim2.new(0, 2, 0, 2)
-title.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-title.TextColor3 = Color3.fromRGB(138, 43, 226) -- Neon purple text
+title.BackgroundColor3 = Color3.fromRGB(0, 0, 0) 
+title.TextColor3 = Color3.fromRGB(138, 43, 226) 
 title.Text = "Keked Trade Scam"
 title.Font = Enum.Font.SourceSansBold
-title.TextSize = 24 -- Larger title text
+title.TextSize = 24 
 title.Parent = titleBackground
 
 local buttonNames = {"Freeze Trade", "Force Accept", "Force Confirm"}
 local buttonSpacing = 50
-local buttonSize = UDim2.new(0.9, 0, 0, 40) -- Slightly bigger buttons
+local buttonSize = UDim2.new(0.9, 0, 0, 40) 
 
 for i, name in ipairs(buttonNames) do
     local button = Instance.new("TextButton")
     button.Name = name
     button.Size = buttonSize
     button.Position = UDim2.new(0.05, 0, 0, 50 + (i - 1) * buttonSpacing)
-    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0) 
     button.BorderSizePixel = 2
-    button.BorderColor3 = Color3.fromRGB(138, 43, 226) -- Neon purple outline
-    button.TextColor3 = Color3.fromRGB(138, 43, 226) -- Neon purple text
+    button.BorderColor3 = Color3.fromRGB(138, 43, 226) 
+    button.TextColor3 = Color3.fromRGB(138, 43, 226) 
     button.Text = name
     button.Font = Enum.Font.SourceSansBold
-    button.TextSize = 20 -- Larger and bolder button text
+    button.TextSize = 20 
     button.AutoButtonColor = false
     button.Parent = mainFrame
 
     button.MouseButton1Click:Connect(function()
-        button.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- Dim black on click
+        button.BackgroundColor3 = Color3.fromRGB(50, 50, 50) 
         print(name .. " clicked!")
-        wait(0.1) -- Reduced wait time to 0.1 seconds for quicker color change
-        button.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Reset to black
+        wait(0.1) 
+        button.BackgroundColor3 = Color3.fromRGB(0, 0, 0) 
     end)
     
     button.MouseEnter:Connect(function()
